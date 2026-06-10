@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavya | Terminal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="scrollable">
+    <div class="bg-glare"></div>
+
+    <div class="style-toggle">
+        <button id="toggle-style" title="Toggle UI Style">STYLE: INTERACTIVE</button>
+    </div>
+
+    <div class="mode-toggle">
+        <button id="toggle-scroll" title="Toggle Scroll Mode">MODE: SCROLL</button>
+    </div>
+
+    <div class="coffee-widget">
+        <button id="coffee-btn" title="Enjoying the vibe? Drop a coffee!">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+            </svg>
+        </button>
+        <div class="coffee-stats">
+            <span class="coffee-label">SUPPORT REACH</span>
+            <span id="coffee-count">0</span>
+        </div>
+    </div>
+
+    <div class="resume-wrapper" id="global-resume-wrapper">
+        <button class="resume-trigger" id="resume-trigger">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            RESUME
+        </button>
+        <div class="resume-menu" id="resume-menu">
+            <a href="Resume.pdf" target="_blank" class="resume-link">VIEW</a>
+            <a href="Resume.pdf" download="Bhavya_Resume.pdf" class="resume-link">DOWNLOAD</a>
+        </div>
+    </div>
+
+    <!-- MINIMALIST VIEW (Hidden by default) -->
+    <div id="minimalist-view" class="minimal-container">
+        <header class="minimal-header">
+            <div class="minimal-header-top">
+                <h1>Bhavya</h1>
+                <div class="minimal-resume-wrapper">
+                    <button class="minimal-resume-trigger" id="minimal-resume-trigger">// resume</button>
+                    <div class="minimal-resume-menu" id="minimal-resume-menu">
+                        <a href="Resume.pdf" target="_blank" class="minimal-resume-link">view</a>
+                        <a href="Resume.pdf" download="Bhavya_Resume.pdf" class="minimal-resume-link">download</a>
+                    </div>
+                </div>
+            </div>
+            <p>bhavyawork121@gmail.com</p>
+            <p>New Delhi, India</p>
+        </header>
+
+        <section class="minimal-section">
+            <h2 class="minimal-title">Work</h2>
+            <p class="minimal-hint">// click any role to expand</p>
+            <div class="minimal-work-list">
+                <div class="work-item">
+                    <div class="work-header" data-target="work-3rd">2026/01 - present: Research Intern @ KR Mangalam</div>
+                    <div class="work-details" id="work-3rd">
+                        Building IoT-based air quality sensors and complex 3D models under university guidance. Developing 'Collaborate' as a standalone platform.
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-header" data-target="work-2nd">2025/01 - 2025/04: SDE Intern @ SR India</div>
+                    <div class="work-details" id="work-2nd">
+                        Architected and launched corporate website from scratch. Mastered DSA and LeetCode during the tenure.
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-header" data-target="work-1st">2024/08 - 2024/11: GSSoC & SIH Selection</div>
+                    <div class="work-details" id="work-1st">
+                        Contributed to Open Source via GirlScript Summer of Code. Selected for SIH Internal rounds after placing 4th in campus hackathon.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="minimal-section">
+            <h2 class="minimal-title">Stuff I Built</h2>
+            <ul class="built-list">
+                <li><strong>Collaborate</strong> — Peer-to-peer real-time academic collaboration platform.</li>
+                <li><strong>Netwatch #</strong> — High-performance C++ packet sniffer and network analyzer.</li>
+                <li><strong>btouch #</strong> — Universal developer identity and digital business card.</li>
+                <li><strong>WA Direct #</strong> — Privacy-focused WhatsApp messaging utility.</li>
+            </ul>
+        </section>
+
+        <section class="minimal-section">
+            <h2 class="minimal-title">Stack</h2>
+            <ul class="stack-list">
+                <li><strong>Languages:</strong> Python, C++, SQL, JavaScript</li>
+                <li><strong>Frameworks:</strong> Node.js, React, Socket.IO</li>
+                <li><strong>Tools:</strong> IoT, 3D Modeling, Git, Linux, Pcap</li>
+                <li><strong>Approach:</strong> Systems Thinking, Scalable Solutions, Innovative Thinking</li>
+            </ul>
+        </section>
+
+        <section class="minimal-section">
+            <h2 class="minimal-title">Recognition</h2>
+            <ul class="built-list">
+                <li><strong>Smart India Hackathon (SIH)</strong> — Selected for Internal Rounds</li>
+                <li><strong>Campus Hackathon</strong> — Winner (4th Place) — Gamified Student Credit Portal</li>
+            </ul>
+        </section>
+
+        <section class="minimal-section">
+            <h2 class="minimal-title">Education</h2>
+            <p><strong>B.Tech, AI/ML</strong> — K.R. Mangalam University, 2024 - 2028</p>
+        </section>
+
+        <section class="minimal-section">
+            <h2 class="minimal-title">Find Me</h2>
+            <ul class="built-list">
+                <li>github <a href="https://github.com/bhavyawork121" target="_blank">github.com/bhavyawork121</a></li>
+                <li>linkedin <a href="https://www.linkedin.com/in/bhavya-agarwal-5a446b366/" target="_blank">linkedin.com/in/bhavya-agarwal</a></li>
+                <li>email <a href="mailto:bhavyawork121@gmail.com">bhavyawork121@gmail.com</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <main class="viewport">
+        <!-- Navigation -->
+        <nav class="nav-container">
+            <div class="nav-pill" id="nav-pill">
+                <button class="nav-item active" data-panel="home">HOME</button>
+                <button class="nav-item" data-panel="about">ABOUT</button>
+                <button class="nav-item" data-panel="projects">PROJECTS</button>
+                <button class="nav-item" data-panel="timeline">TIMELINE</button>
+                <button class="nav-item" data-panel="contact">CONTACT</button>
+            </div>
+        </nav>
+
+        <!-- Panels Container -->
+        <div class="panels-wrapper">
+            <!-- HOME PANEL -->
+            <section class="panel active" id="home">
+                <div class="panel-content split">
+                    <div class="home-left">
+                        <p class="eyebrow-label">> currently: building, breaking, learning</p>
+                        <h1 class="headline">Bhavya</h1>
+                        <p class="subheading">AI/ML · Full-Stack · Open Source</p>
+                        <div class="quote-container">
+                            <span id="typewriter-quote"></span><span class="cursor-blink">_</span>
+                        </div>
+                        <button class="cta-button" onclick="switchPanel('about')">Learn More ↓</button>
+                    </div>
+                    <div class="home-right">
+                        <div class="avatar-container">
+                            <img src="Screenshot 2026-01-18 at 6.07.43 PM.png" alt="Bhavya" class="profile-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT PANEL -->
+            <section class="panel" id="about">
+                <div class="panel-content">
+                    <h2 class="section-title">ABOUT_ME</h2>
+                    <div class="about-grid">
+                        <div class="bio-text">
+                            <p>I am a Computer Science undergraduate at KR Mangalam University, passionate about building scalable and helpful solutions that create a tangible, real-world impact. With a problem-solving mindset and innovative thinking, I am actively seeking an internship to apply my technical expertise in a professional environment and contribute to meaningful projects.</p>
+                        </div>
+                        <div class="skills-cloud">
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">C++</span>
+                            <span class="skill-pill">SQL</span>
+                            <span class="skill-pill">DSA</span>
+                            <span class="skill-pill">Cyber Security</span>
+                            <span class="skill-pill">IoT</span>
+                            <span class="skill-pill">3D Modeling</span>
+                            <span class="skill-pill">Node.js</span>
+                            <span class="skill-pill">Open Source</span>
+                        </div>
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <span class="stat-value">4+</span>
+                                <span class="stat-label">Years Coding</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">2</span>
+                                <span class="stat-label">Internships</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">SIH</span>
+                                <span class="stat-label">Selected</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">∞</span>
+                                <span class="stat-label">Chai</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS PANEL -->
+            <section class="panel" id="projects">
+                <div class="panel-content">
+                    <h2 class="section-title">SELECTED_WORKS</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-card-header">
+                                <h3 class="mono-text">Collaborate</h3>
+                                <button class="info-toggle" title="More Info">↳</button>
+                            </div>
+                            <p class="project-short-desc">Peer-to-peer real-time academic collaboration platform.</p>
+                            <div class="project-details">
+                                <p>Built a decentralized platform for student collaboration using WebRTC for video/audio and Socket.IO for real-time document editing. Optimized for low-latency peer connections.</p>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">WebRTC</span>
+                                <span class="tag">Node.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/FOUND-D/Collaborate" target="_blank">→ GitHub</a>
+                                <a href="https://collaborater.vercel.app" target="_blank">→ Live</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-card-header">
+                                <h3 class="mono-text">Netwatch</h3>
+                                <button class="info-toggle" title="More Info">↳</button>
+                            </div>
+                            <p class="project-short-desc">High-performance C++ packet sniffer and network analyzer.</p>
+                            <div class="project-details">
+                                <p>Architected a low-level network monitoring tool using libpcap to capture and analyze TCP/UDP traffic. Implemented real-time packet filtering and protocol breakdown for network debugging.</p>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">Pcap</span>
+                                <span class="tag">Linux</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/bhavyawork121/Packet_Sniffer" target="_blank">→ GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-card-header">
+                                <h3 class="mono-text">WA Direct</h3>
+                                <button class="info-toggle" title="More Info">↳</button>
+                            </div>
+                            <p class="project-short-desc">Privacy-focused WhatsApp messaging utility.</p>
+                            <div class="project-details">
+                                <p>Streamlined workflow for sending WhatsApp messages to unsaved contacts. Focused on absolute privacy with zero data persistence and a clean, ad-free experience.</p>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tag">React Native</span>
+                                <span class="tag">API</span>
+                                <span class="tag">Privacy</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://link-peach-psi.vercel.app" target="_blank">→ Live</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-card-header">
+                                <h3 class="mono-text">btouch</h3>
+                                <button class="info-toggle" title="More Info">↳</button>
+                            </div>
+                            <p class="project-short-desc">Universal developer identity and digital business card.</p>
+                            <div class="project-details">
+                                <p>Created a platform for developers to host their professional identity. Integrated GitHub API for live project fetching and Supabase for secure data management.</p>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tag">Next.js</span>
+                                <span class="tag">Supabase</span>
+                                <span class="tag">Tailwind</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/bhavyawork121/btouch" target="_blank">→ GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JOURNEY PANEL -->
+            <section class="panel" id="timeline">
+                <div class="panel-content">
+                    <h2 class="section-title">SYSTEM_EXPLORER</h2>
+                    <div class="terminal-explorer">
+                        <div class="explorer-sidebar">
+                            <p class="sidebar-label">DIRECTORIES</p>
+                            <ul class="directory-list">
+                                <li class="dir-item" data-year="3rd_year">
+                                    <span class="folder-icon"></span> 3rd_year/
+                                    <ul class="file-list">
+                                        <li class="file-item" data-milestone="3rd_year">research_internship.md</li>
+                                    </ul>
+                                </li>
+                                <li class="dir-item" data-year="2nd_year">
+                                    <span class="folder-icon"></span> 2nd_year/
+                                    <ul class="file-list">
+                                        <li class="file-item" data-milestone="2nd_year">sr_india_sde.md</li>
+                                    </ul>
+                                </li>
+                                <li class="dir-item" data-year="1st_year">
+                                    <span class="folder-icon"></span> 1st_year/
+                                    <ul class="file-list">
+                                        <li class="file-item" data-milestone="1st_year">hackathons_&_open_source.md</li>
+                                        <li class="file-item" data-milestone="init">university_onboarding.md</li>
+                                    </ul>
+                                </li>
+                                <li class="dir-item" data-year="extras">
+                                    <span class="folder-icon"></span> extras/
+                                    <ul class="file-list">
+                                        <li class="file-item" data-milestone="gfg">gfg_campus_mantri.md</li>
+                                        <li class="file-item" data-milestone="gemini">gemini_student_ambassador.md</li>
+                                        <li class="file-item" data-milestone="cybersec">cyber_security_research.md</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="explorer-main">
+                            <div class="terminal-header">
+                                <span class="path-text">bhavya@portfolio:~/journey/details.sh</span>
+                            </div>
+                            <div class="terminal-output" id="explorer-output">
+                                <p class="prompt">guest@terminal:~$ cat --select-file</p>
+                                <div id="output-content" class="output-text">
+                                    [ system ready ] select a file to view detailed logs...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT PANEL -->
+            <section class="panel" id="contact">
+                <div class="panel-content contact-center">
+                    <h2 class="section-title">CONNECT_STATION</h2>
+                    
+                    <div class="contact-terminal-card">
+                        <div class="status-grid">
+                            <div class="status-item">
+                                <span class="status-label">AVAILABILITY</span>
+                                <span class="status-value highlight">OPEN_FOR_INTERNSHIPS</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">LOCATION</span>
+                                <span class="status-value">New Delhi, IN</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">TIMEZONE</span>
+                                <span class="status-value">GMT +5:30</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-methods">
+                            <div class="method-row">
+                                <span class="method-cmd">cat email.txt</span>
+                                <div class="method-action">
+                                    <span class="method-value">bhavyawork121@gmail.com</span>
+                                    <a href="mailto:bhavyawork121@gmail.com" class="copy-btn redirect-link" title="Send Email">SEND</a>
+                                </div>
+                            </div>
+                            <div class="method-row">
+                                <span class="method-cmd">ssh github.com</span>
+                                <div class="method-action">
+                                    <a href="https://github.com/bhavyawork121" target="_blank" class="method-link">/bhavyawork121</a>
+                                </div>
+                            </div>
+                            <div class="method-row">
+                                <span class="method-cmd">ssh linkedin.com</span>
+                                <div class="method-action">
+                                    <a href="https://www.linkedin.com/in/bhavya-agarwal-5a446b366/" target="_blank" class="method-link">/in/bhavya-agarwal</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="terminal-footer">
+                            <p class="blink-text">_ awaiting_connection...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
