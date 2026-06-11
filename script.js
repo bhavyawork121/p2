@@ -347,44 +347,43 @@ document.addEventListener('DOMContentLoaded', () => {
     // Coffee Widget Logic
     const coffeeBtn = document.getElementById('coffee-btn');
     const coffeeCount = document.getElementById('coffee-count');
+    const NAMESPACE = 'bhavyawork121_portfolio';
+    const KEY = 'reach_v1';
     
     if (coffeeBtn && coffeeCount) {
-        let actualCount = parseInt(localStorage.getItem('coffee_reach_count') || 0);
         let hasClicked = localStorage.getItem('coffee_has_reached') === 'true';
 
         const formatCount = (num) => {
             if (num <= 50) return num;
-            // Round down to nearest 50 and add +
             const milestone = Math.floor(num / 50) * 50;
             return milestone + '+';
         };
 
-        // Counting Animation on Load
         const animateCount = (target) => {
-            let start = 0;
-            const duration = 1500; // 1.5 seconds
+            const duration = 1500;
             const startTime = performance.now();
 
             function update(currentTime) {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                
-                // Ease out cubic
                 const easeProgress = 1 - Math.pow(1 - progress, 3);
                 const currentNum = Math.floor(easeProgress * target);
-                
                 coffeeCount.textContent = formatCount(currentNum);
-
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                } else {
-                    coffeeCount.textContent = formatCount(target);
-                }
+                if (progress < 1) requestAnimationFrame(update);
+                else coffeeCount.textContent = formatCount(target);
             }
             requestAnimationFrame(update);
         };
 
-        animateCount(actualCount);
+        // Fetch global count
+        fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.count !== undefined) animateCount(data.count);
+            })
+            .catch(() => {
+                coffeeCount.textContent = '0';
+            });
 
         if (hasClicked) {
             coffeeBtn.style.opacity = '0.5';
@@ -395,20 +394,23 @@ document.addEventListener('DOMContentLoaded', () => {
         coffeeBtn.addEventListener('click', () => {
             if (localStorage.getItem('coffee_has_reached') === 'true') return;
 
-            actualCount++;
-            coffeeCount.textContent = formatCount(actualCount);
-            localStorage.setItem('coffee_reach_count', actualCount);
-            localStorage.setItem('coffee_has_reached', 'true');
-            
-            // Interaction effect
-            coffeeBtn.style.transform = 'scale(1.2) rotate(15deg)';
-            coffeeBtn.style.opacity = '0.5';
-            coffeeBtn.style.cursor = 'default';
-            coffeeBtn.title = "Thanks for your support!";
+            fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}/up`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.count !== undefined) {
+                        coffeeCount.textContent = formatCount(data.count);
+                        localStorage.setItem('coffee_has_reached', 'true');
+                        
+                        coffeeBtn.style.transform = 'scale(1.2) rotate(15deg)';
+                        coffeeBtn.style.opacity = '0.5';
+                        coffeeBtn.style.cursor = 'default';
+                        coffeeBtn.title = "Thanks for your support!";
 
-            setTimeout(() => {
-                coffeeBtn.style.transform = '';
-            }, 150);
+                        setTimeout(() => {
+                            coffeeBtn.style.transform = '';
+                        }, 150);
+                    }
+                });
         });
     }
 });
